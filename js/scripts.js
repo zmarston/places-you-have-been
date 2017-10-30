@@ -1,6 +1,6 @@
 //business logic
-function Location(place, when, who, info) {
-  this.place = place;
+function Location(place, when, who, info) { //Constructor
+  this.place = place; //.place is the property / place is the value
   this.when = when;
   this.who = who;
   this.info = info;
@@ -25,5 +25,12 @@ $(function(){
     $("input#who-input").val("");
     $("input#info-input").val("");
 
+    $(".place-added").last().click(function() {
+      $("#show-destination").show();
+      $(".place").text(newDestination.place);
+      $(".when").text(newDestination.when);
+      $(".who").text(newDestination.who);
+      $(".info").text(newDestination.info);
+    });
   });
 });
